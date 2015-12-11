@@ -4,11 +4,12 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
  * Created by j-xuanyu on 2015/12/9.
  */
-class HttpContent implements IHttpContent {
+class HttpContent extends IHttpContent {
     private byte[] bytes = null;
 
     HttpContent(InputStream inputStream) {
@@ -55,5 +56,10 @@ class HttpContent implements IHttpContent {
     @Override
     public byte[] ReadAsByte() {
         return bytes;
+    }
+
+    @Override
+    public void WriteToStream(OutputStream outputStream) throws IOException {
+
     }
 }

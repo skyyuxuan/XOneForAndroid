@@ -18,14 +18,13 @@ public class HttpRequest {
         this.url = url;
     }
 
-    private String httpMethod = HttpClient.HttpMethod.GET.name();
+    private HttpClient.HttpMethod httpMethod = HttpClient.HttpMethod.GET;
 
-    public String getHttpMethod() {
+    public HttpClient.HttpMethod getHttpMethod() {
         return httpMethod;
-
     }
 
-    public void setHttpMethod(String httpMethod) {
+    public void setHttpMethod(HttpClient.HttpMethod httpMethod) {
         this.httpMethod = httpMethod;
     }
 
@@ -57,5 +56,15 @@ public class HttpRequest {
 
     public Map<String, String> getHeaders() {
         return headers;
+    }
+
+    private IHttpContent httpContent;
+
+    public void setHttpContent(IHttpContent httpContent) {
+        this.httpContent = httpContent;
+    }
+
+    public IHttpContent getHttpContent() {
+        return httpContent;
     }
 }
